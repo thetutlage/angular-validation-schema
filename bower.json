@@ -1,0 +1,25 @@
+{
+  "name": "angular-validation-schema",
+  "main": "angular-validation-schema.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/thetutlage/angular-validation-schema",
+  "authors": [
+    "Harminder Virk <virk.officials@gmail.com>"
+  ],
+  "description": "Schema based validation provider for https://github.com/huei90/angular-validation",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "validations",
+    "validator",
+    "angular-validation"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
