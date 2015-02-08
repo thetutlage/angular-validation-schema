@@ -74,6 +74,10 @@ app.config(function(validationSchemaProvider){
 
 ```
 
+## Plunker
+
+[Live Demo](http://plnkr.co/edit/X56HEsDYgYoY8gbSj7cu?p=preview)
+
 ## That's All
 
 That is all you need , rest of the stuff will work as specified in angular-valiation docs , it is just a provider to remove validations from html to schema.
