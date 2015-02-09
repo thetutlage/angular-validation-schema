@@ -74,6 +74,44 @@ app.config(function(validationSchemaProvider){
 
 ```
 
+## Global Validations
+
+At times we have similar validations on most of the fields and it is very frustating to add same validations on all the fields.
+
+Using globals inside your schema you can add global rules on all mentioned fields.
+
+```
+
+var Author = {
+	globals: {
+		'validations': 'required',
+		'validate-on': 'submit',
+		'messages':{
+			'required': {
+				'error':'We need it',
+				'success': 'All good'
+			}
+		}
+	},
+	firstname: {
+	},
+	url:{
+		'validations': 'required,url'
+	}
+};
+
+```
+
+You see how much we have cut down by using globals, as they apply rules globally on all fields.
+
+## Tiny Templating
+
+We all like personalized error messages, and using globals it will be difficult to show personalized
+messages. So by using this tiny helper `%field%` you can print field name.
+
+So `%field% is required on firstname` with turn out to be `firstname is required`.
+
+
 ## Plunker
 
 [Live Demo](http://plnkr.co/edit/X56HEsDYgYoY8gbSj7cu?p=preview)
