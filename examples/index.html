@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title></title>
+</head>
+<body>
+
+<div>
+	<form name="Form" validation-schema schema="Author">
+		<div>
+			<input type="text" ng-model="form.firstname" name="firstname" />
+		</div>
+		<div>
+			<input type="text" ng-model="form.url" name="url" />
+		</div>
+		<div>
+			<button ng-click="next(Form)" validation-submit="Form"> Submit </button>
+		</div>
+	</form>
+</div>
+
+	<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="../bower_components/angular-validation/dist/angular-validation.js"></script>
+	<script type="text/javascript" src="../bower_components/angular-validation/dist/angular-validation-rule.js"></script>
+	<script type="text/javascript" src="../angular-validation-schema.js"></script>
+
+	<script type="text/javascript">
+		var app = angular.module('app',['validation', 'validation.rule','validation.schema']);
+		app.config(function(validationSchemaProvider){
+			var schema = {
+				globals:{
+					'validations': 'required',
+					'validate-on': 'submit',
+					'messages':{
+						'required':{
+							'error':'%field% is required'
+						},
+						'url':{
+							'error': 'It must be a url'
+						}
+					}
+				},
+				firstname: {
+				},
+				url: {
+					'validations': 'url',
+					'messages':{
+						'url':{
+							'error': 'Ahhhh!!'
+						}
+					}
+				},
+			}
+			validationSchemaProvider.set("Author",schema);
+		});
+	</script>
+</body>
+</html>
