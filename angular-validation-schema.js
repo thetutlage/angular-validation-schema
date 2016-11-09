@@ -122,7 +122,7 @@
 					// schema.firstname = extendDeep(schema.firstname,defaultSchema);
 
 					// Grabbing all form elements inside the tElem
-					var formElements = tElem[0].querySelectorAll('input,select,textarea');
+					var formElements = tElem[0].querySelectorAll('[name]');
 
 					// Looping through all form Elements
 					angular.forEach(formElements,function(input){
