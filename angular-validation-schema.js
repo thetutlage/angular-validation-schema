@@ -39,15 +39,18 @@
 	})
 
 	// Required directive
-	.directive('validationSchema',['validationSchema',function(validationSchema){
+	.directive('validationSchema',['validationSchema','$injector',function(validationSchema, $injector){
 		return{
 			restrict: 'AE',
 			compile: function(tElem, tAttrs){
+				// Get Validation Provider
+				var $validationProvider = $injector.get('$validation');
+
 				// Default schema to extend upon
 				var defaultSchema = {
 					// default validation is set to required
 					'validations':'required',
-					'validate-on':'watch'
+					'validate-on': $validationProvider.getValidMethod() || 'watch'
 				};
 
 				var globalMessages = {};
@@ -122,7 +125,7 @@
 					// schema.firstname = extendDeep(schema.firstname,defaultSchema);
 
 					// Grabbing all form elements inside the tElem
-					var formElements = tElem[0].querySelectorAll('input,select,textarea');
+					var formElements = tElem[0].querySelectorAll('[name]');
 
 					// Looping through all form Elements
 					angular.forEach(formElements,function(input){
