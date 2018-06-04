@@ -1,0 +1,22 @@
+{
+  "name": "angular-validation-schema",
+  "version": "1.0.0",
+  "description": "[angular-validation](https://github.com/huei90/angular-validation) is damn neat in terms of validating your forms. I personally hate making my html too much declarative especially  for long forms.",
+  "main": "angular-validation-schema.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexanderbelko/angular-validation-schema.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexanderbelko/angular-validation-schema/issues"
+  },
+  "homepage": "https://github.com/alexanderbelko/angular-validation-schema#readme"
+}
